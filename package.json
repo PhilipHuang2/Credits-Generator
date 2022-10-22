@@ -1,0 +1,23 @@
+{
+  "name": "credits-generator",
+  "version": "1.0.0",
+  "description": "Creates a HTML page with your contributers",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodex index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PhilipHuang2/Credits-Generator.git"
+  },
+  "author": "Philip Huang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PhilipHuang2/Credits-Generator/issues"
+  },
+  "homepage": "https://github.com/PhilipHuang2/Credits-Generator#readme",
+  "dependencies": {
+    "inquirer": "^8.0.0",
+    "jest": "^29.2.1"
+  }
+}
