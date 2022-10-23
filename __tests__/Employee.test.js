@@ -73,7 +73,7 @@ describe("Employee", () => {
     });
 
     describe("getEmail", ()=> {
-        it("should return a string", ()=> {
+        it("should return a string when an Employee calls getEmail", ()=> {
             const newEmployee = new Employee("Philip", "123", "Philiphuang2@gmail.com");
             expect(typeof newEmployee.getEmail()).toEqual("string");
         });
@@ -82,7 +82,30 @@ describe("Employee", () => {
             const badge = 123;
             const newEmployee = new Employee("Philip", "123", "Philiphuang2@gmail.com");
             expect(newEmployee.getEmail()).toEqual("Philiphuang2@gmail.com");
-        })
+        });
+    });
+
+    describe("getRole", ()=> {
+        it("should return a string when an Employee calls getEmail", ()=> {
+            const newEmployee = new Employee("Philip", "123", "Philiphuang2@gmail.com");
+            expect(typeof newEmployee.getRole()).toEqual("string");
+        });
+
+        it("should return 'Employee' when any Employee calls getRole", ()=> {
+            const newEmployee = new Employee("Philip", "123", "Philiphuang2@gmail.com");
+            expect(newEmployee.getRole()).toEqual("Employee");
+        });
+
+        it("should return 'Employee' when any Employee calls getRole", ()=> {
+            const newEmployee = new Employee("Philip", "123", "Philiphuang2@gmail.com");
+            expect(newEmployee.getRole()).toEqual("Employee");
+        });
+
+        it("should return the same value when two different Employee call getRole", ()=> {
+            const employee1 = new Employee("Philip", "123", "Philiphuang2@gmail.com");
+            const employee2 = new Employee("Peter", "4132", "Peterhuang2@gmail.com");
+            expect(employee1.getRole()).toEqual(employee2.getRole());
+        });
     });
 
 
