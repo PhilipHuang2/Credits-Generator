@@ -4,7 +4,8 @@
   "description": "Creates a HTML page with your contributers",
   "main": "index.js",
   "scripts": {
-    "test": "nodex index.js"
+    "test": "jest"
+
   },
   "repository": {
     "type": "git",
