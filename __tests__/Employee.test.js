@@ -43,10 +43,47 @@ describe("Employee", () => {
             const regEmployee = new Employee("Philip", badge, "Philiphuang2@gmail.com");
             expect(regEmployee.email).toEqual("Philiphuang2@gmail.com");
         });
-        
+        // Add function to guarantee that id is a number
+
     });
-    // describe("Member Variables", ()=>{
-    //     it("should return the same number")
-    // })
+
+    describe("getName", ()=> {
+        it("should return a string", ()=> {
+            const newEmployee = new Employee("Philip", "123", "Philiphuang2@gmail.com");
+            expect(typeof newEmployee.getName()).toEqual("string");
+        });
+
+        it("should return a string which has the same name as the Employee Name", ()=> {
+            const newEmployee = new Employee("Philip", "123", "Philiphuang2@gmail.com");
+            expect(newEmployee.getName()).toEqual("Philip");
+        })
+    });
+
+    describe("getId", ()=> {
+        it("should return a number", ()=> {
+            const newEmployee = new Employee("Philip", "123", "Philiphuang2@gmail.com");
+            expect(typeof newEmployee.getId()).toEqual("number");
+        });
+
+        it("should return a number which has the same name as the Employee Id", ()=> {
+            const badge = 123;
+            const newEmployee = new Employee("Philip", "123", "Philiphuang2@gmail.com");
+            expect(newEmployee.getId()).toEqual(badge);
+        })
+    });
+
+    describe("getEmail", ()=> {
+        it("should return a string", ()=> {
+            const newEmployee = new Employee("Philip", "123", "Philiphuang2@gmail.com");
+            expect(typeof newEmployee.getEmail()).toEqual("string");
+        });
+
+        it("should return a number which has the same name as the Employee Id", ()=> {
+            const badge = 123;
+            const newEmployee = new Employee("Philip", "123", "Philiphuang2@gmail.com");
+            expect(newEmployee.getEmail()).toEqual("Philiphuang2@gmail.com");
+        })
+    });
+
 
 });
