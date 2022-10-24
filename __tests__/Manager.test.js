@@ -1,4 +1,4 @@
-const Employee = require('../lib/Employee');
+var Employee = require('../lib/Employee');
 var Manager = require('../lib/Manager');
 
 describe('Manager',()=> {
@@ -53,5 +53,5 @@ describe('Manager',()=> {
             expect(otherEmployee.getRole()).toEqual('Employee');
             expect(unknownManager.getRole()).toEqual('Manager');  
         })
-    })
+    });
 });
