@@ -1,4 +1,5 @@
-var Employee = require('../lib/Employee')
+var Employee = require('../lib/Employee');
+
 describe("Employee", () => {
     //Ensures that the 
     describe("Initialization", ()=> {
