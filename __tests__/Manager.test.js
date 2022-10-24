@@ -3,7 +3,7 @@ var Manager = require('../lib/Manager');
 
 describe('Manager',()=> {
     describe('Initialization', ()=> {
-        it("should return an object with the 'officeNumber property when called with the correct parameters", ()=> {
+        it("should return an object with the 'officeNumber' property when called with the correct parameters", ()=> {
             let phone = 43526;
             let officePhone = 145134;
             const bigBoi = new Manager("James", phone, "BigMan@gmail.com", officePhone);
