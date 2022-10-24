@@ -1,3 +1,4 @@
+const Employee = require('../lib/Employee');
 var Manager = require('../lib/Manager');
 
 describe('Manager',()=> {
@@ -16,7 +17,25 @@ describe('Manager',()=> {
             expect(bigBoi.officeNumber).toEqual(officePhone);
         })
         // add function to check if only 4 parameters
+        // add function ensure number
+    });
 
+    describe('getRole',()=> {
+        it("should return 'Manager' when called", ()=>{
+            let phone = 43526;
+            let officePhone = 145134;
+            const unknownManager = new Manager("David", phone, "newMan@gmail.com", officePhone);
+            expect(unknownManager.getRole()).toEqual('Manager');
+        })
 
+        it("should return 'Manager' even when an Employee is called and returns 'Employee'", ()=> {
+            let phone = 43526;
+            let officePhone = 145134;
+            const unknownManager = new Manager("David", phone, "newMan@gmail.com", officePhone); 
+            let otherPhone = 12354;
+            const otherEmployee = new Employee("Jerome", otherPhone, "other@gmail.com");
+            expect(otherEmployee.getRole()).toEqual('Employee');
+            expect(unknownManager.getRole()).toEqual('Manager');  
+        })
     })
 });
