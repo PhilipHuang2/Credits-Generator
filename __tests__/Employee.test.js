@@ -78,7 +78,7 @@ describe("Employee", () => {
             expect(typeof newEmployee.getEmail()).toEqual("string");
         });
 
-        it("should return a number which has the same name as the Employee Id", ()=> {
+        it("should return a email which is the same as the one given to the manager", ()=> {
             const badge = 123;
             const newEmployee = new Employee("Philip", "123", "Philiphuang2@gmail.com");
             expect(newEmployee.getEmail()).toEqual("Philiphuang2@gmail.com");

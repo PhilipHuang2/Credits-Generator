@@ -20,6 +20,22 @@ describe('Manager',()=> {
         // add function ensure number
     });
 
+    describe("getOfficeNumber", ()=> {
+        it("should return a number when a Manager calls getOfficeNumber", ()=> {
+            let phone = 43526;
+            let officePhone = 145134;
+            const bigBoi = new Manager("James", phone, "BigMan@gmail.com", officePhone);
+            expect(typeof bigBoi.getOfficeNumber()).toEqual("number");
+        });
+
+        it("should return a number which is the same as the one given to it", ()=> {
+            let phone = 43526;
+            let officePhone = 145134;
+            const bigBoi = new Manager("James", phone, "BigMan@gmail.com", officePhone);
+            expect(bigBoi.getOfficeNumber()).toEqual(officePhone);
+        });
+    });
+
     describe('getRole',()=> {
         it("should return 'Manager' when called", ()=>{
             let phone = 43526;
