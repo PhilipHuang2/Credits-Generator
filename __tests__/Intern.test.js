@@ -1,5 +1,5 @@
-var Employee = require('../lib/Employee');
-var Intern = require('../lib/Intern');
+const Employee = require('../lib/Employee');
+const Intern = require('../lib/Intern');
 
 describe('Intern', ()=> {
     describe('Initialization', ()=> {
