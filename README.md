@@ -11,6 +11,9 @@ This generator was made to help people painlessly create a html page to credit t
 
 # Example
 
+[credits_generator.mov.webm](https://user-images.githubusercontent.com/5439889/197950191-29e38615-f832-4605-b6a9-1be776f1aa9a.webm)
+
+
 # Table of Contents
   
 - [Installation](#installation---)
