@@ -87,7 +87,7 @@ function addMember(){
         }
         // need to ask a reconfirmation ..
     ])
-    .then(async(answers) => {
+    .then((answers) => {
         if(answers.personType == 'Intern')
             internInfo.push(new Intern(answers.personName, answers.personID, answers.personID, answers.personSchool));
 
@@ -96,8 +96,11 @@ function addMember(){
         
         // repeat until all the people are inserted.
         if(answers.morePeople)
-             await addMember();
-        console.log(engineerInfo)
+            addMember();
+        else{
+            // console.log(internInfo);
+            console.log(createDocument(managerInfo,engineerInfo,internInfo));
+        }
             // else
         // format to file and create html page.
     }) 
@@ -107,12 +110,11 @@ function addMember(){
 // build a html web page that display all of them with links and clean styling
 
 Inquirer.prompt(managerQuestions)
-    .then(async(answers) => {
+    .then((answers) => {
         managerInfo = new Manager(answers.managerName, answers.managerID, answers.managerEmail, answers.managerOfficeNumber);
         // add additional Interns and Engineers until completion
         // need to stop code until addMember is complete
-        await addMember();
-        createDocument(managerInfo,engineerInfo,internInfo);
+        addMember();
     });
 
 // I want a recursive call function
