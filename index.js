@@ -3,7 +3,7 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const {createDocument} = require('./lib/template')
 const Inquirer = require('inquirer');
-
+const fs = require('fs');
 let managerInfo;
 let internInfo = [];
 let engineerInfo = [];
@@ -98,12 +98,12 @@ function addMember(){
         if(answers.morePeople)
             addMember();
         else{
-            // console.log(internInfo);
-            console.log(createDocument(managerInfo,engineerInfo,internInfo));
+            const doc = createDocument(managerInfo,engineerInfo,internInfo);
+            fs.writeFile("dist\\test.html", doc, err => {
+                if(err) return console.log(err);
+            });
         }
-            // else
-        // format to file and create html page.
-    }) 
+    });
 }
 
 // given an Manager Object, an array of Interns, and an array of Engineer
@@ -115,7 +115,4 @@ Inquirer.prompt(managerQuestions)
         // add additional Interns and Engineers until completion
         // need to stop code until addMember is complete
         addMember();
-    });
-
-// I want a recursive call function
-// 
+    })
