@@ -9,6 +9,8 @@ are creating a web page.  This time we are asking a user to enter in a team of p
 
 This generator was made to help people painlessly create a html page to credit their team.  It also bridges back my experience in the frontend back to into a complete package.  This project is effectively a one way call from backend to frontend as the 'server' passes it in the front end and populates the html elements there.     
 
+# Example
+
 # Table of Contents
   
 - [Installation](#installation---)
