@@ -1,6 +1,7 @@
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
+const {createDocument} = require('./lib/template')
 const Inquirer = require('inquirer');
 
 let managerInfo;
@@ -97,6 +98,8 @@ function addMember(){
         // repeat until all the people are inserted.
         if(answers.morePeople)
             addMember();
+        createDocument(managerInfo);
+        
         // else
         // format to file and create html page.
     }) 
@@ -111,12 +114,6 @@ Inquirer.prompt(managerQuestions)
         managerInfo = new Manager(answers.managerName, answers.managerID, answers.managerEmail, answers.managerOfficeNumber);
         // add additional Interns and Engineers until completion
         addMember();
-        // At this point managerInfo, internInfo, and engineer Info is solved
-        
-
-        // console.log("answers:\n:");
-        // console.log(answers);
-
     });
 
 // I want a recursive call function
