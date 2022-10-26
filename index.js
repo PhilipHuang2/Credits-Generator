@@ -2,7 +2,6 @@ const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Inquirer = require('inquirer');
-const { default: inquirer } = require('inquirer');
 
 let managerInfo;
 let internInfo = [];
@@ -103,10 +102,17 @@ function addMember(){
     }) 
 }
 
+// given an Manager Object, an array of Interns, and an array of Engineer
+// build a html web page that display all of them with links and clean styling
+
+
 Inquirer.prompt(managerQuestions)
     .then(answers => {
         managerInfo = new Manager(answers.managerName, answers.managerID, answers.managerEmail, answers.managerOfficeNumber);
+        // add additional Interns and Engineers until completion
         addMember();
+        // At this point managerInfo, internInfo, and engineer Info is solved
+        
 
         // console.log("answers:\n:");
         // console.log(answers);
